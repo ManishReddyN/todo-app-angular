@@ -1,0 +1,18 @@
+.completedTodo {
+  .title {
+    text-decoration: line-through;
+    opacity: 70%;
+    font-size: 15px;
+  }
+  .date span {
+    display: none;
+  }
+  .date::after {
+    content: "finished";
+    opacity: 70%;
+  }
+}
+
+.date {
+  text-align: center;
+}

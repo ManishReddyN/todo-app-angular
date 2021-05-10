@@ -1,0 +1,37 @@
+<nz-list style="padding: 0 1.5rem">
+  <nz-list-item
+    nz-row
+    [nzGutter]="8"
+    *ngFor="let todo of todos"
+    [ngClass]="{ completedTodo: todo.isComplete }"
+  >
+    <!-- style="max-width: 800px" -->
+    <div nz-col nzSpan="14" nz-typography>
+      <label
+        nz-checkbox
+        [(ngModel)]="todo.isComplete"
+        ngModelChange="changeTodoStatus(todo)"
+        style="font-size: 18px; margin-top: 12px"
+        ><div class="title">{{ todo.title | titlecase }}</div></label
+      >
+    </div>
+    <div nz-col nzSpan="9" class="date">
+      <span> {{ todo.date | date: "EE, dd-MMM-yy hh:mm aa":"IST" }}</span>
+      <div *ngIf="checkDateOver(todo.date) && todo.isComplete === false">
+        <nz-tag nzColor="error" style="margin-top: 7px">
+          <i nz-icon nzType="exclamation-circle"></i>
+          <span>Overdue</span>
+        </nz-tag>
+      </div>
+    </div>
+    <div nz-col nzSpan="1">
+      <i
+        nz-icon
+        nzType="delete"
+        nzTheme="outline"
+        style="font-size: 18px; cursor: pointer"
+        (click)="deleteTodo(todo)"
+      ></i>
+    </div>
+  </nz-list-item>
+</nz-list>
