@@ -12,8 +12,11 @@ specifiers:
   '@angular/platform-browser': ~11.2.12
   '@angular/platform-browser-dynamic': ~11.2.12
   '@angular/router': ~11.2.12
+  '@ant-design/icons': ^4.6.2
+  '@ant-design/icons-angular': ^11.0.1
   '@types/jasmine': ~3.6.0
   '@types/node': ^12.11.1
+  '@types/uuid': ^8.3.0
   codelyzer: ^6.0.0
   jasmine-core: ~3.6.0
   jasmine-spec-reporter: ~5.0.0
@@ -22,12 +25,15 @@ specifiers:
   karma-coverage: ~2.0.3
   karma-jasmine: ~4.0.0
   karma-jasmine-html-reporter: ^1.5.0
+  moment: ^2.29.1
+  ng-zorro-antd: 11.4.1
   protractor: ~7.0.0
   rxjs: ~6.6.0
   ts-node: ~8.3.0
   tslib: ^2.0.0
   tslint: ~6.1.0
   typescript: ~4.1.5
+  uuid: ^8.3.2
   zone.js: ~0.11.3
 
 dependencies:
@@ -39,8 +45,14 @@ dependencies:
   '@angular/platform-browser': 11.2.13_81f9d88f4aa5637e7f195ecbc1ef3e5f
   '@angular/platform-browser-dynamic': 11.2.13_28bcb9ff90c86ba45c85adff913f2782
   '@angular/router': 11.2.13_dcbc89665ee74e0962c5c7a138490521
+  '@ant-design/icons': 4.6.2
+  '@ant-design/icons-angular': 11.0.1_dcbc89665ee74e0962c5c7a138490521
+  '@types/uuid': 8.3.0
+  moment: 2.29.1
+  ng-zorro-antd: 11.4.1_f67f28043fdb01734df77c15856a05fe
   rxjs: 6.6.7
   tslib: 2.2.0
+  uuid: 8.3.2
   zone.js: 0.11.4
 
 devDependencies:
@@ -243,6 +255,19 @@ packages:
       tslib: 2.2.0
     dev: false
 
+  /@angular/cdk/11.2.12_d1a07237d427d8862f9d128f312d41bb:
+    resolution: {integrity: sha512-LImCQQ7n5OnTGXBAx1BaHgBBbdXiEtsNcHk5RvVURya9sswRcXRoa48EG3RyuT8mtqWsUdOX9+v4nCINLG4hZA==}
+    peerDependencies:
+      '@angular/common': ^11.0.0 || ^12.0.0-0
+      '@angular/core': ^11.0.0 || ^12.0.0-0
+    dependencies:
+      '@angular/common': 11.2.13_@angular+core@11.2.13+rxjs@6.6.7
+      '@angular/core': 11.2.13_rxjs@6.6.7+zone.js@0.11.4
+      tslib: 2.2.0
+    optionalDependencies:
+      parse5: 5.1.1
+    dev: false
+
   /@angular/cli/11.2.12:
     resolution: {integrity: sha512-4VkHfHO4QuTkGFw5Tx7khZxsNHp60VKk8JzmPF6KIjkrDUVWVNwKOFOnJtbz9cXvayiUNNSEWqo9Oq3513zz4g==}
     engines: {node: '>= 10.13.0', npm: ^6.11.0 || ^7.5.6, yarn: '>= 1.13.0'}
@@ -411,6 +436,53 @@ packages:
       '@angular/platform-browser': 11.2.13_81f9d88f4aa5637e7f195ecbc1ef3e5f
       rxjs: 6.6.7
       tslib: 2.2.0
+    dev: false
+
+  /@ant-design/colors/5.1.1:
+    resolution: {integrity: sha512-Txy4KpHrp3q4XZdfgOBqLl+lkQIc3tEvHXOimRN1giX1AEC7mGtyrO9p8iRGJ3FLuVMGa2gNEzQyghVymLttKQ==}
+    dependencies:
+      '@ctrl/tinycolor': 3.4.0
+    dev: false
+
+  /@ant-design/colors/6.0.0:
+    resolution: {integrity: sha512-qAZRvPzfdWHtfameEGP2Qvuf838NhergR35o+EuVyB5XvSA98xod5r4utvi4TJ3ywmevm290g9nsCG5MryrdWQ==}
+    dependencies:
+      '@ctrl/tinycolor': 3.4.0
+    dev: false
+
+  /@ant-design/icons-angular/11.0.1_dcbc89665ee74e0962c5c7a138490521:
+    resolution: {integrity: sha512-WwxVx/aToxTjWmB5+O+3rOjSYdF8FC/Yd/8jF1ZGQMtLWAzP8/foQmKvPAktTUsh0/Ijhtur7LrHN2VuUedMcA==}
+    peerDependencies:
+      '@angular/common': ^11.0.5
+      '@angular/core': ^11.0.5
+      '@angular/platform-browser': ^11.0.0
+      rxjs: ^6.4.0
+    dependencies:
+      '@angular/common': 11.2.13_@angular+core@11.2.13+rxjs@6.6.7
+      '@angular/core': 11.2.13_rxjs@6.6.7+zone.js@0.11.4
+      '@angular/platform-browser': 11.2.13_81f9d88f4aa5637e7f195ecbc1ef3e5f
+      '@ant-design/colors': 5.1.1
+      rxjs: 6.6.7
+      tslib: 2.2.0
+    dev: false
+
+  /@ant-design/icons-svg/4.1.0:
+    resolution: {integrity: sha512-Fi03PfuUqRs76aI3UWYpP864lkrfPo0hluwGqh7NJdLhvH4iRDc3jbJqZIvRDLHKbXrvAfPPV3+zjUccfFvWOQ==}
+    dev: false
+
+  /@ant-design/icons/4.6.2:
+    resolution: {integrity: sha512-QsBG2BxBYU/rxr2eb8b2cZ4rPKAPBpzAR+0v6rrZLp/lnyvflLH3tw1vregK+M7aJauGWjIGNdFmUfpAOtw25A==}
+    engines: {node: '>=8'}
+    peerDependencies:
+      react: '>=16.0.0'
+    dependencies:
+      '@ant-design/colors': 6.0.0
+      '@ant-design/icons-svg': 4.1.0
+      '@babel/runtime': 7.14.0
+      classnames: 2.3.1
+      rc-util: 5.12.2
+    transitivePeerDependencies:
+      - react-dom
     dev: false
 
   /@babel/code-frame/7.12.13:
@@ -1378,6 +1450,12 @@ packages:
       regenerator-runtime: 0.13.7
     dev: true
 
+  /@babel/runtime/7.14.0:
+    resolution: {integrity: sha512-JELkvo/DlpNdJ7dlyw/eY7E0suy5i5GQH+Vlxaq1nsNJ+H7f4Vtv3jMeCEgRhZZQFXTjldYfQgv2qmM6M1v5wA==}
+    dependencies:
+      regenerator-runtime: 0.13.7
+    dev: false
+
   /@babel/template/7.12.13:
     resolution: {integrity: sha512-/7xxiGA57xMo/P2GVvdEumr8ONhFOhfgq2ihK3h1e6THqzTAkHbkXgB0xI9yeTfIUoH3+oAeHhqm/I43OTbbjA==}
     dependencies:
@@ -1415,6 +1493,11 @@ packages:
       '@babel/helper-validator-identifier': 7.14.0
       to-fast-properties: 2.0.0
     dev: true
+
+  /@ctrl/tinycolor/3.4.0:
+    resolution: {integrity: sha512-JZButFdZ1+/xAfpguQHoabIXkcqRRKpMrWKBkpEZZyxfY9C1DpADFB8PEqGSTeFr135SaTRfKqGKx5xSCLI7ZQ==}
+    engines: {node: '>=10'}
+    dev: false
 
   /@discoveryjs/json-ext/0.5.2:
     resolution: {integrity: sha512-HyYEUDeIj5rRQU2Hk5HTB2uHsbRQpF70nvMhVzi+VJR0X+xNEhjPui4/kBf3VeH/wqD28PT4sVOm8qqLjBrSZg==}
@@ -1614,6 +1697,10 @@ packages:
   /@types/source-list-map/0.1.2:
     resolution: {integrity: sha512-K5K+yml8LTo9bWJI/rECfIPrGgxdpeNbj+d53lwN4QjW1MCwlkhUms+gtdzigTeUyBr09+u8BwOIY3MXvHdcsA==}
     dev: true
+
+  /@types/uuid/8.3.0:
+    resolution: {integrity: sha512-eQ9qFW/fhfGJF8WKHGEHZEyVWfZxrT+6CLIJGBcZPfxUh/+BnEj+UCGYMlr9qZuX/2AltsvwrGqp0LhEW8D0zQ==}
+    dev: false
 
   /@types/webpack-sources/0.1.8:
     resolution: {integrity: sha512-JHB2/xZlXOjzjBB6fMOpH1eQAfsrpqVVIbneE0Rok16WXwFaznaI5vfg75U5WgGJm7V9W1c4xeRQDjX/zwvghA==}
@@ -2639,6 +2726,10 @@ packages:
       static-extend: 0.1.2
     dev: true
 
+  /classnames/2.3.1:
+    resolution: {integrity: sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==}
+    dev: false
+
   /clean-stack/2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
     engines: {node: '>=6'}
@@ -3242,6 +3333,11 @@ packages:
     dependencies:
       assert-plus: 1.0.0
     dev: true
+
+  /date-fns/2.21.3:
+    resolution: {integrity: sha512-HeYdzCaFflc1i4tGbj7JKMjM4cKGYoyxwcIIkHzNgCkX8xXDNJDZXgDDVchIWpN4eQc3lH37WarduXFZJOtxfw==}
+    engines: {node: '>=0.11'}
+    dev: false
 
   /date-format/2.1.0:
     resolution: {integrity: sha512-bYQuGLeFxhkxNOF3rcMtiZxvCBAquGzZm6oWA1oZ0g2THUzivaRhv8uOhdr19LmoobSOLoIAxeUK2RdbM8IFTA==}
@@ -5774,6 +5870,10 @@ packages:
     hasBin: true
     dev: true
 
+  /moment/2.29.1:
+    resolution: {integrity: sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==}
+    dev: false
+
   /move-concurrently/1.0.1:
     resolution: {integrity: sha1-viwAX9oy4LKa8fBdfEszIUxwH5I=}
     dependencies:
@@ -5868,6 +5968,31 @@ packages:
   /next-tick/1.0.0:
     resolution: {integrity: sha1-yobR/ogoFpsBICCOPchCS524NCw=}
     dev: true
+
+  /ng-zorro-antd/11.4.1_f67f28043fdb01734df77c15856a05fe:
+    resolution: {integrity: sha512-YxoPIGz6JMF9uqSSBZRtr1TlrqT49xk7zInZoN7uvNFc7dGW2fb8syskzJ+Pe83QMC/rnbuPWz1VMRf2HtCHvw==}
+    peerDependencies:
+      '@angular/animations': ^11.0.4
+      '@angular/common': ^11.0.4
+      '@angular/core': ^11.0.4
+      '@angular/forms': ^11.0.4
+      '@angular/platform-browser': ^11.0.4
+      '@angular/router': ^11.0.4
+    dependencies:
+      '@angular/animations': 11.2.13_@angular+core@11.2.13
+      '@angular/cdk': 11.2.12_d1a07237d427d8862f9d128f312d41bb
+      '@angular/common': 11.2.13_@angular+core@11.2.13+rxjs@6.6.7
+      '@angular/core': 11.2.13_rxjs@6.6.7+zone.js@0.11.4
+      '@angular/forms': 11.2.13_dcbc89665ee74e0962c5c7a138490521
+      '@angular/platform-browser': 11.2.13_81f9d88f4aa5637e7f195ecbc1ef3e5f
+      '@angular/router': 11.2.13_dcbc89665ee74e0962c5c7a138490521
+      '@ant-design/icons-angular': 11.0.1_dcbc89665ee74e0962c5c7a138490521
+      date-fns: 2.21.3
+      resize-observer-polyfill: 1.5.1
+      tslib: 2.2.0
+    transitivePeerDependencies:
+      - rxjs
+    dev: false
 
   /nice-try/1.0.5:
     resolution: {integrity: sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==}
@@ -6338,6 +6463,11 @@ packages:
     dependencies:
       parse5: 6.0.1
     dev: true
+
+  /parse5/5.1.1:
+    resolution: {integrity: sha512-ugq4DFI0Ptb+WWjAdOK16+u/nHfiIrcE+sh8kZMaM0WllQKLI9rOUq6c2b7cwPkXdzfQESqvoqK6ug7U/Yyzug==}
+    dev: false
+    optional: true
 
   /parse5/6.0.1:
     resolution: {integrity: sha512-Ofn/CTFzRGTTxwpNEs9PP93gXShHcTq255nzRYSKe8AkVpZY7e1fpmTfOyoIvjP5HG7Z2ZM7VS9PPhQGW2pOpw==}
@@ -7072,6 +7202,21 @@ packages:
       webpack: 4.44.2
     dev: true
 
+  /rc-util/5.12.2:
+    resolution: {integrity: sha512-kzqG2lHY4oZsoj5Svov12K+9wi0xQHvGzfbLlsF1PDEH1aTbgdNTwlE7mejc3MGEr+7bNHa4+T5ZemCS8vQ1Gw==}
+    peerDependencies:
+      react: '>=16.9.0'
+      react-dom: '>=16.9.0'
+    dependencies:
+      '@babel/runtime': 7.14.0
+      react-is: 16.13.1
+      shallowequal: 1.1.0
+    dev: false
+
+  /react-is/16.13.1:
+    resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+    dev: false
+
   /read-cache/1.0.0:
     resolution: {integrity: sha1-5mTvMRYRZsl1HNvo28+GtftY93Q=}
     dependencies:
@@ -7147,7 +7292,6 @@ packages:
 
   /regenerator-runtime/0.13.7:
     resolution: {integrity: sha512-a54FxoJDIr27pgf7IgeQGxmqUNYrcV338lf/6gH456HZ/PhX+5BcwHXG9ajESmwe6WRO0tAzRUrRmNONWgkrew==}
-    dev: true
 
   /regenerator-transform/0.14.5:
     resolution: {integrity: sha512-eOf6vka5IO151Jfsw2NO9WpGX58W6wWmefK3I1zEGr0lOD0u8rwPaNqQL1aRxUaxLeKO3ArNh3VYg1KbaD+FFw==}
@@ -7251,6 +7395,10 @@ packages:
   /requires-port/1.0.0:
     resolution: {integrity: sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=}
     dev: true
+
+  /resize-observer-polyfill/1.5.1:
+    resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==}
+    dev: false
 
   /resolve-cwd/2.0.0:
     resolution: {integrity: sha1-AKn3OHVW4nA46uIyyqNypqWbZlo=}
@@ -7663,6 +7811,10 @@ packages:
     dependencies:
       kind-of: 6.0.3
     dev: true
+
+  /shallowequal/1.1.0:
+    resolution: {integrity: sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==}
+    dev: false
 
   /shebang-command/1.2.0:
     resolution: {integrity: sha1-RKrGW2lbAzmJaMOfNj/uXer98eo=}
@@ -8620,7 +8772,6 @@ packages:
   /uuid/8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
-    dev: true
 
   /validate-npm-package-name/3.0.0:
     resolution: {integrity: sha1-X6kS2B630MdK/BQN5zF/DKffQ34=}

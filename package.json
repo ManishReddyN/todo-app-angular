@@ -19,8 +19,14 @@
     "@angular/platform-browser": "~11.2.12",
     "@angular/platform-browser-dynamic": "~11.2.12",
     "@angular/router": "~11.2.12",
+    "@ant-design/icons": "^4.6.2",
+    "@ant-design/icons-angular": "^11.0.1",
+    "@types/uuid": "^8.3.0",
+    "moment": "^2.29.1",
+    "ng-zorro-antd": "11.4.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "uuid": "^8.3.2",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {

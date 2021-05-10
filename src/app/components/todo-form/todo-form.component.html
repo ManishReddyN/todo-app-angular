@@ -1,0 +1,62 @@
+<div style="padding: 1.5rem">
+  <form
+    nz-form
+    nzLayout="inline"
+    (ngSubmit)="handleAdd()"
+    style="text-align: center"
+    autocomplete="off"
+  >
+    <nz-form-item style="margin-top: 10px">
+      <nz-form-control nzErrorTip="Please input your task title!">
+        <input
+          nz-input
+          [(ngModel)]="todoTitle"
+          placeholder="Enter The Task Title"
+          name="title"
+          nzSize="large"
+          style="min-width: 250px"
+        />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item style="margin-top: 10px">
+      <nz-form-control>
+        <nz-date-picker
+          name="todoDate"
+          nzSize="large"
+          nzFormat="EE, dd-MMM-yy"
+          [(ngModel)]="todoDate"
+          (ngModelChange)="handleDate($event)"
+          style="max-width: 160px"
+          nzPlaceHolder="Target Date"
+        ></nz-date-picker
+      ></nz-form-control>
+    </nz-form-item>
+    <nz-form-item style="margin-top: 10px">
+      <nz-form-control>
+        <nz-time-picker
+          name="todoTime"
+          nzSize="large"
+          nzFormat="hh:mm aa"
+          [(ngModel)]="todoTime"
+          (ngModelChange)="handleTime($event)"
+          style="max-width: 140px"
+          nzPlaceHolder="Target Time"
+        ></nz-time-picker
+      ></nz-form-control>
+    </nz-form-item>
+    <nz-form-item style="margin-top: 10px">
+      <nz-form-control>
+        <button
+          nz-button
+          nzType="primary"
+          [disabled]="
+            todoTitle === '' || todoDate === null || todoTime === null
+          "
+          nzSize="large"
+        >
+          Add Task
+        </button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</div>
