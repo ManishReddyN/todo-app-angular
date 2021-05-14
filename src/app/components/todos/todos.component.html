@@ -10,14 +10,16 @@
       <label
         nz-checkbox
         [(ngModel)]="todo.isComplete"
-        ngModelChange="changeTodoStatus(todo)"
+        (ngModelChange)="changeTodoStatus(todo)"
         style="font-size: 18px; margin-top: 12px"
         ><div class="title">{{ todo.title | titlecase }}</div></label
       >
     </div>
     <div nz-col nzSpan="9" class="date">
       <span> {{ todo.date | date: "EE, dd-MMM-yy hh:mm aa":"IST" }}</span>
-      <div *ngIf="checkDateOver(todo.date) && todo.isComplete === false">
+      <div
+        *ngIf="momentVar(time).isAfter(todo.date) && todo.isComplete === false"
+      >
         <nz-tag nzColor="error" style="margin-top: 7px">
           <i nz-icon nzType="exclamation-circle"></i>
           <span>Overdue</span>

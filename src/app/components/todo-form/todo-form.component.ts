@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Todo } from 'src/app/models/todo.model';
 import { TodoService } from 'src/app/services/todo.service';
 import { v4 as uuid } from 'uuid';
@@ -9,7 +9,7 @@ import * as moment from 'moment';
   templateUrl: './todo-form.component.html',
   styleUrls: ['./todo-form.component.less'],
 })
-export class TodoFormComponent implements OnInit {
+export class TodoFormComponent {
   todoTitle: string = '';
   todoDate: Date | null;
   todoTime: Date | null;
@@ -21,15 +21,12 @@ export class TodoFormComponent implements OnInit {
     this.todoTime = null;
   }
 
-  ngOnInit(): void {}
   handleDate = (date: Date) => {
     this.datePart = moment(date).format('YYYY-MM-DD');
-    console.log(this.datePart);
     this.todoDate = new Date(date);
   };
   handleTime = (date: Date) => {
     this.timePart = moment(date).format('HH:mm');
-    console.log(this.timePart);
     this.todoTime = new Date(date);
   };
   handleAdd = () => {
@@ -37,7 +34,7 @@ export class TodoFormComponent implements OnInit {
     const newTodo: Todo = {
       id: uuid(),
       title: this.todoTitle,
-      date: this.finalDate,
+      date: this.finalDate.toJSON(),
       isComplete: false,
     };
     this.todoService.createTodo(newTodo);
