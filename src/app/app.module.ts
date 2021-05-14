@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
@@ -21,6 +21,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzImageModule } from 'ng-zorro-antd/image';
+import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -53,6 +54,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -71,6 +73,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
     NzDatePickerModule,
     NzTimePickerModule,
     NzFormModule,
+    NzMessageModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
