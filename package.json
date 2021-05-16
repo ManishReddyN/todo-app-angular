@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "netlify": "ng build --prod && netlify deploy --prod --dir dist/todo-app",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -19,6 +20,7 @@
     "@angular/platform-browser": "~11.2.12",
     "@angular/platform-browser-dynamic": "~11.2.12",
     "@angular/router": "~11.2.12",
+    "@angular/service-worker": "~11.2.12",
     "@ant-design/icons": "^4.6.2",
     "@ant-design/icons-angular": "^11.0.1",
     "@types/uuid": "^8.3.0",
@@ -42,6 +44,7 @@
     "@typescript-eslint/eslint-plugin": "4.16.1",
     "@typescript-eslint/parser": "4.16.1",
     "eslint": "^7.6.0",
+    "source-map-explorer": "^2.5.2",
     "typescript": "~4.1.5"
   }
 }

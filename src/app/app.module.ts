@@ -35,6 +35,8 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 registerLocaleData(en);
 
@@ -74,6 +76,12 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
     NzTimePickerModule,
     NzFormModule,
     NzMessageModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
