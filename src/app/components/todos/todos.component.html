@@ -1,4 +1,7 @@
-<nz-list style="padding: 0 1.5rem">
+<div *ngIf="loading" style="width: 100%; text-align: center">
+  <nz-spin nzSimple nzSpinning="loading" nzSize="large"></nz-spin>
+</div>
+<nz-list *ngIf="!loading" style="padding: 0 1.5rem">
   <nz-list-item
     nz-row
     [nzGutter]="8"
