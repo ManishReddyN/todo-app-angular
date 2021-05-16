@@ -13,10 +13,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
+//Routing
+import { AppRoutingModule } from './app-routing.module';
+
 // Component Imports
+
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { TodoFormComponent } from './components/todo-form/todo-form.component';
 import { HeaderComponent } from './layouts/header/header.component';
+
+//Firebase Imports
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
 
 //Ant Design Imports
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -54,9 +64,14 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
     TodosComponent,
     TodoFormComponent,
     HeaderComponent,
+    HomeComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
     CommonModule,
     FormsModule,
     HttpClientModule,
@@ -80,8 +95,6 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
     NzMessageModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
-      // Register the ServiceWorker as soon as the app is stable
-      // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
