@@ -10,6 +10,8 @@ import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 // Component Imports
 import { TodosComponent } from './components/todos/todos.component';
@@ -35,8 +37,7 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { NzInputModule } from 'ng-zorro-antd/input';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 registerLocaleData(en);
 
@@ -75,12 +76,13 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
     NzDatePickerModule,
     NzTimePickerModule,
     NzFormModule,
+    NzSpinModule,
     NzMessageModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
   providers: [

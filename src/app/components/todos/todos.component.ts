@@ -13,7 +13,7 @@ export class TodosComponent implements OnInit, OnDestroy {
   todos: Todo[] = [];
   time: Date = new Date();
   didChange!: Subscription;
-
+  loading: boolean = true;
   constructor(
     private todoService: TodoService,
     private popup: NzMessageService
@@ -24,6 +24,7 @@ export class TodosComponent implements OnInit, OnDestroy {
     this.todoService.getTodos().subscribe((todos: Todo[]) => {
       todos.sort((a, b) => (a.date > b.date ? 1 : 0));
       this.todos = todos;
+      this.loading = false;
     });
     this.timeId = setInterval(() => {
       this.time = new Date();
@@ -44,8 +45,8 @@ export class TodosComponent implements OnInit, OnDestroy {
   getTodos = () => {
     this.todoService.getTodos().subscribe((todos: Todo[]) => {
       todos.sort((a, b) => (a.date > b.date ? 1 : 0));
-
       this.todos = todos;
+      this.loading = false;
     });
   };
 
