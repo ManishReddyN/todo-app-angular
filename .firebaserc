@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "nmreddy-todo": {
+      "hosting": {
+        "todo-app": [
+          "nmreddy-todo"
+        ]
+      }
+    }
+  }
+}
