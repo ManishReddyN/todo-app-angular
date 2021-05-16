@@ -1,0 +1,40 @@
+<form nz-form style="padding: 2rem">
+  <nz-form-item>
+    <nz-form-label nzSpan="5" nzRequired>Email</nz-form-label>
+    <nz-form-control nzHasFeedback nzSpan="12" nzErrorTip="Email is not valid">
+      <input
+        nz-input
+        [(ngModel)]="credentials.email"
+        name="'email'"
+        type="email"
+        placeholder="Enter your email address"
+        email
+      />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzSpan="5" nzRequired>Password</nz-form-label>
+    <nz-form-control
+      nzHasFeedback
+      nzSpan="12"
+      nzErrorTip="Password is required"
+    >
+      <input
+        nz-input
+        [(ngModel)]="credentials.password"
+        name="'password'"
+        type="password"
+        placeholder="Enter your password"
+        required
+      />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control
+      [nzSpan]="isHorizontal ? 12 : null"
+      [nzOffset]="isHorizontal ? 5 : null"
+    >
+      <button (click)="onSubmit()" nz-button nzType="primary">Submit</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

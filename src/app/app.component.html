@@ -1,12 +1,11 @@
 <nz-layout
   ><nz-header style="height: 80px"><app-header></app-header></nz-header>
   <nz-layout>
-    <nz-content>
-      <app-todo-form></app-todo-form> <app-todos></app-todos></nz-content
+    <nz-content> <router-outlet></router-outlet></nz-content
     ><nz-sider nzWidth="500" [nzCollapsedWidth]="0" nzBreakpoint="lg">
       <img
         nz-image
-        [nzSrc]="'../assets/todo.png'"
+        [nzSrc]="'../../../assets/todoside.webp'"
         width="500px"
         nzDisablePreview="true" /></nz-sider
   ></nz-layout>

@@ -22,7 +22,7 @@ export class TodosComponent implements OnInit, OnDestroy {
   timeId!: any;
   ngOnInit(): void {
     this.todoService.getTodos().subscribe((todos: Todo[]) => {
-      todos.sort((a, b) => (a.date > b.date ? 1 : 0));
+      todos.sort((a, b) => (new Date(a.date) > new Date(b.date) ? 1 : 0));
       this.todos = todos;
       this.loading = false;
     });
@@ -44,7 +44,7 @@ export class TodosComponent implements OnInit, OnDestroy {
   }
   getTodos = () => {
     this.todoService.getTodos().subscribe((todos: Todo[]) => {
-      todos.sort((a, b) => (a.date > b.date ? 1 : 0));
+      todos.sort((a, b) => (new Date(a.date) > new Date(b.date) ? 1 : 0));
       this.todos = todos;
       this.loading = false;
     });
